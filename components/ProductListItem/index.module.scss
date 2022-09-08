@@ -1,0 +1,48 @@
+.block{
+    padding: 0px 0px var(--spaceS) 0px;
+    .image{
+        padding: 0px;
+        max-width: 180px!important;
+
+        cursor: pointer;
+        span{
+            width: 180px !important;
+            max-width: 180px!important;
+            height: auto !important;
+            img{
+                border-radius: 4px;
+                object-fit: contain;
+            }
+        }
+       
+    }
+    .description{
+        padding:0px var(--spaceS);
+        .content{
+            cursor: pointer;
+            span{
+                display: block;
+                &.price{
+                    font-size: 24px;
+                    padding-bottom: var(--spaceM);
+                    white-space:nowrap;
+
+                    span{
+                        display: inline-block;
+                        padding-right: var(--spaceS);
+                    }
+                }
+                &.descriptionText{
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .localization{
+        padding-right:var(--spaceM);
+        font-size: 12px;
+        white-space: nowrap;
+        text-align: right;
+        color: var(--gray);
+    }
+}

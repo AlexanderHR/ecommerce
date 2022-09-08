@@ -1,0 +1,48 @@
+
+.bar{
+    display: flex;
+    background-color: var(--barColor);
+    height: 48px;
+    justify-content: center;
+    .searchBar{
+        align-self: center;
+        .logo{
+            cursor: pointer;
+            display: inline-block;
+            vertical-align:middle;
+            margin: auto var(--spaceS) auto auto;
+            height: 32px;
+        }
+        .inputContainer{
+            display: inline-block;
+            background-color: var(--bgColor);
+            height: 32px;
+
+        }
+        .inputField{
+            font-size: 18px;
+            display: inline-block;
+            height: 32px;
+            width: 70vw;
+            border: 0px;
+            border-radius: 3px 0px 0px 3px;
+            padding-left: var(--spaceS);
+        }
+        .inputIcon {
+            display: inline-block;
+            vertical-align:middle;
+            height: 32px;
+            width: 32px;
+            padding: 4px 0px 4px 7px;
+            border-radius: 0px 3px 3px 0px;
+            cursor: pointer;
+            .icon{
+                display: block;
+                background: url("/assets/ic_Search.png") no-repeat;
+                height: 32px;
+                width: 32px;
+            }
+        }
+      
+    }
+}

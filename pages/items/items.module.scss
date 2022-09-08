@@ -1,0 +1,93 @@
+.searchResult{
+    flex: 1;
+    background-color: var(--containerColor);
+    height: 100%;
+    margin: auto 10vh;
+
+    .breadcrumb{
+        background-color: var(--bgColor);
+        padding: var(--spaceS);
+        ol{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            li {
+                display: inline;
+            }
+            li+li:before {
+                padding: 8px;
+                color: black;
+                content: "▸";
+              }
+        }
+    }
+    .resultView{
+        margin: var(--spaceS);
+        min-height: 200px;
+       
+    }
+
+    .resultDetailsView{
+        padding: var(--spaceM);
+        max-width: 100% !important;
+        .productMainPicture{
+                padding: 0px;
+                max-width: 680px;
+        }
+        .productDetails{
+            padding: 0px;
+            .condition{
+                font-size: 14px;
+                padding-bottom: var(--spaceS);
+            }
+            .description{
+                font-size: 24px;
+                font-weight: bold;
+                color: var(--black);
+            }
+            .price{
+                padding: var(--spaceM) 0px;
+                font-size: 46px;
+            }
+        
+            button{
+                background-color: #3483fa;
+                border-color: transparent;
+                width: 250px;
+                font-weight: normal;
+                font-size: 16px;
+                border-radius: 6px;
+                color: var(--containerColor);
+                height: 48px;
+                padding: 0 24px;
+                text-align: center;
+                cursor: pointer;
+            }
+            
+
+        }
+        
+        .descriptionView{
+            align-items: left;
+            justify-content: center;
+            padding-top: var(--spaceS);
+            .descriptionTitle{
+                font-size: 28px;
+            }
+            .descriptionText{
+                font-size: 16px;
+                color: var(--gray);
+                margin-bottom: var(--spaceS);
+                width: calc(100% - 100px);
+            }
+        }
+
+    }
+}
+@media (max-width: 600px) {
+    .searchResult{
+        margin: auto;
+        padding: 0px var(--spaceS);
+    }
+}
+
