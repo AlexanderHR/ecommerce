@@ -7,28 +7,32 @@ export const searchProductsNormalize = (response: any) => {
         items: []
     };
     if (response?.results && Array.isArray(response.results)) {
-        result.items = (response.results as any[]).map(item => {
-            let condition = String(item.condition);
-            if (condition == 'new') condition = 'Nuevo';
-            else if (condition == 'used') condition = 'Usado';
+        const list = (response.results as any[]);
+        if (list.length > 0) {
+            result.items = list.map(item => {
+                let condition = String(item.condition);
+                if (condition == 'new') condition = 'Nuevo';
+                else if (condition == 'used') condition = 'Usado';
 
-            const newItem: SearchProductItem = {
-                id: String(item.id),
-                title: String(item.title),
-                price: {
-                    currency: String(item.currency_id), amount: Number(item.price), decimals: 0
-                },
-                picture: String(item.thumbnail),
-                condition,
-                free_shipping: Boolean(item?.shipping?.free_shipping),
-                city: String(item?.address?.city_name)
-            }
-            return newItem;
-        });
+                const newItem: SearchProductItem = {
+                    id: String(item.id),
+                    title: String(item.title),
+                    price: {
+                        currency: String(item.currency_id), amount: Number(item.price), decimals: 0
+                    },
+                    picture: String(item.thumbnail),
+                    condition,
+                    free_shipping: Boolean(item?.shipping?.free_shipping),
+                    city: String(item?.address?.city_name)
+                }
+                return newItem;
+            });
+        }
+
     }
     if (response?.filters && Array.isArray(response.filters)) {
         const categories = (response.filters as any[]).find(item => item.id == 'category');
-        if (categories.values && Array.isArray(categories.values)) {
+        if (categories?.values && Array.isArray(categories.values)) {
             const list = categories.values as any[];
             if (list.length > 0) {
                 result.categories = (categories.values[0].path_from_root as any[]).map((item) => {

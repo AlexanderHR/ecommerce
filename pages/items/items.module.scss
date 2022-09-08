@@ -41,9 +41,12 @@
                 padding-bottom: var(--spaceS);
             }
             .description{
-                font-size: 24px;
-                font-weight: bold;
-                color: var(--black);
+               
+                h1{
+                    font-size: 24px !important;
+                    font-weight: bold;
+                    color: var(--black);
+                }
             }
             .price{
                 padding: var(--spaceM) 0px;
@@ -75,8 +78,11 @@
                 font-size: 28px;
             }
             .descriptionText{
-                font-size: 16px;
-                color: var(--gray);
+                p{
+                    font-size: 16px;
+                    color: var(--gray);
+                }
+               
                 margin-bottom: var(--spaceS);
                 width: calc(100% - 100px);
             }
@@ -88,7 +94,6 @@
 @media (max-width: 600px) {
     .searchResult{
         margin: auto;
-        padding-left: var(--spaceS);
     }
 }
 

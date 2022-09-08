@@ -42,7 +42,7 @@ const SelectedItem = ({ productData }: Props) => {
 
                             <Row className={styles.description}>
                                 <Col>
-                                    {productData.item.title}
+                                    <h1>{productData.item.title}</h1>
                                 </Col>
                             </Row>
 
@@ -68,7 +68,7 @@ const SelectedItem = ({ productData }: Props) => {
                     <Row className={styles.descriptionView}>
                         <Col>
                             <span className={styles.descriptionText}>
-                                <span>{productData.item.description}</span>
+                                <p>{productData.item.description}</p>
                             </span>
                         </Col>
 
