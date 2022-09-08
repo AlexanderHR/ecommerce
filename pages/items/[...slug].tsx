@@ -94,13 +94,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
         id = (params?.slug as string[])[0];
         if (id) productData = await productApi.productById(id);
     }
-
-
     return {
         props: { id, productData },
-        //        revalidate: 1 * 60 //  1 min
-        revalidate: 5 //  1 min
-
+        revalidate: 1 * 60 //  1 min
     }
 }
 
